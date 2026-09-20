@@ -1,0 +1,7 @@
+# app-ads.txt for Weather & AQI (th.co.infra.weatheraqi)
+# pub-7793615721733246 is the AdMob account that owns app id
+# ca-app-pub-7793615721733246~6936117971 and its Android ad units.
+# f08c47fec0942fa0 is Google's own certification authority id: the same value
+# for every AdMob publisher, so only the pub- number is account-specific.
+
+google.com, pub-7793615721733246, DIRECT, f08c47fec0942fa0
