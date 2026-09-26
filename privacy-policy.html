@@ -138,7 +138,7 @@
     <a href="#th">ภาษาไทย</a>
     <a href="#en">English</a>
   </div>
-  <p class="meta">มีผลบังคับใช้ตั้งแต่วันที่ / Effective date: 19 กันยายน 2569 (19 September 2026)</p>
+  <p class="meta">มีผลบังคับใช้ตั้งแต่วันที่ / Effective date: 26 กันยายน 2569 (26 September 2026)</p>
 
   <!-- ============ THAI VERSION ============ -->
   <section id="th">
@@ -174,7 +174,8 @@
       <tr><td><strong>กรมควบคุมมลพิษ (Air4Thai/PCD)</strong></td><td>แหล่งข้อมูลดัชนีคุณภาพอากาศ (AQI) อย่างเป็นทางการของประเทศไทย</td></tr>
       <tr><td><strong>Cloudflare Workers</strong></td><td>เซิร์ฟเวอร์ตัวกลาง (proxy) สำหรับเรียกข้อมูลอากาศ/AQI พร้อมระบบแคชและจำกัดอัตราการเรียก ซึ่งใช้หมายเลข IP ของอุปกรณ์ท่านในการจำกัดอัตราการเรียก (โค้ดของเราไม่ได้บันทึกหมายเลข IP)</td></tr>
       <tr><td><strong>RevenueCat</strong></td><td>จัดการการสมัครสมาชิกแบบพรีเมียมและการซื้อในแอป</td></tr>
-      <tr><td><strong>Google Maps SDK (Android) / Apple Maps (iOS)</strong></td><td>แสดงแผนที่พื้นหลังของหน้าแผนที่ฝน</td></tr>
+      <tr><td><strong>RainViewer</strong></td><td>ภาพเรดาร์ฝน แอปไม่ได้ติดต่อ RainViewer โดยตรง เซิร์ฟเวอร์ตัวกลางของเราเป็นผู้ดึงภาพให้ RainViewer จึงไม่เห็นหมายเลข IP หรืออุปกรณ์ของท่าน และได้รับเพียงหมายเลขช่องแผนที่ (tile) ซึ่งช่องหนึ่งครอบคลุมพื้นที่กว้างประมาณ 40 กม. ที่ระดับการซูมละเอียดที่สุดที่แอปใช้</td></tr>
+      <tr><td><strong>Google Maps SDK (Android) / Apple Maps (iOS)</strong></td><td>แสดงแผนที่พื้นหลังของหน้าแผนที่ฝนและการ์ดเรดาร์</td></tr>
       <tr><td><strong>Google Play Services</strong></td><td>บริการพื้นฐานของระบบปฏิบัติการ Android</td></tr>
     </table>
     <p class="note">เราไม่ขายข้อมูลส่วนบุคคลของท่านให้แก่บุคคลภายนอกเพื่อวัตถุประสงค์ทางการตลาดโดยเด็ดขาด</p>
@@ -250,7 +251,8 @@
       <tr><td><strong>Air4Thai (Pollution Control Department, Thailand)</strong></td><td>Official Air Quality Index (AQI) data source for Thailand</td></tr>
       <tr><td><strong>Cloudflare Workers</strong></td><td>Backend proxy for weather/AQI data with caching and rate limiting; your IP address is used for rate limiting (our code does not record it)</td></tr>
       <tr><td><strong>RevenueCat</strong></td><td>Manages premium subscriptions and in-app purchases</td></tr>
-      <tr><td><strong>Google Maps SDK (Android) / Apple Maps (iOS)</strong></td><td>Base map on the rain map screen</td></tr>
+      <tr><td><strong>RainViewer</strong></td><td>Rain radar imagery. The App never contacts RainViewer directly: our backend proxy fetches the frames, so RainViewer sees neither your IP address nor your device, only map tile numbers; at the most detailed zoom the App uses, one tile covers roughly 40 km</td></tr>
+      <tr><td><strong>Google Maps SDK (Android) / Apple Maps (iOS)</strong></td><td>Base map on the rain map screen and the radar card</td></tr>
       <tr><td><strong>Google Play Services</strong></td><td>Core Android platform services</td></tr>
     </table>
     <p class="note">We do not sell your personal data to third parties for marketing purposes.</p>
