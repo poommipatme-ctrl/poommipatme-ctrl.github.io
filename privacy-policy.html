@@ -138,7 +138,7 @@
     <a href="#th">ภาษาไทย</a>
     <a href="#en">English</a>
   </div>
-  <p class="meta">มีผลบังคับใช้ตั้งแต่วันที่ / Effective date: 26 กันยายน 2569 (26 September 2026)</p>
+  <p class="meta">มีผลบังคับใช้ตั้งแต่วันที่ / Effective date: 28 กันยายน 2569 (28 September 2026)</p>
 
   <!-- ============ THAI VERSION ============ -->
   <section id="th">
@@ -153,6 +153,8 @@
       <li><strong>สิ่งที่ส่งออกจากอุปกรณ์:</strong> พิกัดจะถูกส่งไปยังเซิร์ฟเวอร์ตัวกลาง (proxy) ของเรา ซึ่งปัดเศษพิกัดเหลือทศนิยม 2 ตำแหน่ง (ประมาณ 1 กม.) ก่อนส่งต่อให้ OpenWeather สำหรับการแสดงชื่อสถานที่ แอปส่งพิกัดทศนิยม 4 ตำแหน่ง (ประมาณ 11 เมตร) ให้ proxy เพื่อระบุจังหวัด แต่ proxy ส่งต่อให้ OpenWeather และเก็บในแคชเพียงทศนิยม 2 ตำแหน่ง</li>
       <li><strong>สิ่งที่เก็บไว้บนอุปกรณ์:</strong> ตำแหน่งล่าสุดของท่าน (ใช้แสดงข้อมูลตอนเปิดแอป และใช้กับการแจ้งเตือนฝุ่น PM2.5 ซึ่งทำงานเบื้องหลังโดยใช้ตำแหน่งที่บันทึกไว้นี้) และชื่อสถานที่ล่าสุดไม่เกิน 30 แห่ง ข้อมูลเหล่านี้อยู่บนอุปกรณ์ของท่านเท่านั้น และจะถูกลบเมื่อท่านลบแอป</li>
     </ul>
+
+    <p>เมื่อท่านเปิดการติดตามตำแหน่งบนหน้าแผนที่ระดับน้ำ แอปจะอ่านตำแหน่งต่อเนื่องเฉพาะขณะที่หน้าจอนั้นเปิดอยู่และแอปอยู่หน้าจอ เพื่อแสดงสถานีใกล้ตัวและเตือนเมื่อเข้าใกล้จุดน้ำล้นตลิ่ง การคำนวณทั้งหมดเกิดบนอุปกรณ์ ตำแหน่งนี้ไม่ถูกส่งออกจากเครื่อง และการติดตามหยุดทันทีเมื่อออกจากหน้าจอหรือแอปไปเบื้องหลัง</p>
 
     <h3>1.2 ข้อมูลอุปกรณ์และตัวระบุโฆษณา</h3>
     <ul>
@@ -172,6 +174,7 @@
       <tr><td><strong>Google AdMob</strong></td><td>แสดงโฆษณาในแอป และขอความยินยอมด้านความเป็นส่วนตัว (UMP) สำหรับผู้ใช้ในสหภาพยุโรป สหราชอาณาจักร สวิตเซอร์แลนด์ และรัฐต่างๆ ในสหรัฐฯ</td></tr>
       <tr><td><strong>OpenWeather</strong></td><td>แหล่งข้อมูลพยากรณ์อากาศ แผนที่ฝน ชื่อสถานที่ และค่า AQI แบบจำลอง ได้รับพิกัดที่ปัดเศษแล้ว (ประมาณ 1 กม.) ผ่านเซิร์ฟเวอร์ตัวกลางของเราเท่านั้น ไม่ได้รับชื่อ อีเมล หรือตัวระบุอุปกรณ์ของท่าน</td></tr>
       <tr><td><strong>กรมควบคุมมลพิษ (Air4Thai/PCD)</strong></td><td>แหล่งข้อมูลดัชนีคุณภาพอากาศ (AQI) อย่างเป็นทางการของประเทศไทย</td></tr>
+      <tr><td><strong>สถาบันสารสนเทศทรัพยากรน้ำ (องค์การมหาชน) — สสน. / ThaiWater</strong></td><td>ข้อมูลระดับน้ำจากสถานีโทรมาตรทั่วประเทศ สำหรับหน้าแผนที่ระดับน้ำ แอปไม่ได้ติดต่อ สสน. โดยตรง เซิร์ฟเวอร์ตัวกลางของเราเป็นผู้ดึงข้อมูล และดึงเป็นไฟล์รวมทั้งประเทศไฟล์เดียวกันสำหรับผู้ใช้ทุกคน คำขอไม่มีพิกัดหรือตัวระบุใดๆ ของท่านแนบไปด้วย สสน. จึงไม่ทราบว่าใครอยู่ที่ใด</td></tr>
       <tr><td><strong>Cloudflare Workers</strong></td><td>เซิร์ฟเวอร์ตัวกลาง (proxy) สำหรับเรียกข้อมูลอากาศ/AQI พร้อมระบบแคชและจำกัดอัตราการเรียก ซึ่งใช้หมายเลข IP ของอุปกรณ์ท่านในการจำกัดอัตราการเรียก (โค้ดของเราไม่ได้บันทึกหมายเลข IP)</td></tr>
       <tr><td><strong>RevenueCat</strong></td><td>จัดการการสมัครสมาชิกแบบพรีเมียมและการซื้อในแอป</td></tr>
       <tr><td><strong>RainViewer</strong></td><td>ภาพเรดาร์ฝน แอปไม่ได้ติดต่อ RainViewer โดยตรง เซิร์ฟเวอร์ตัวกลางของเราเป็นผู้ดึงภาพให้ RainViewer จึงไม่เห็นหมายเลข IP หรืออุปกรณ์ของท่าน และได้รับเพียงหมายเลขช่องแผนที่ (tile) ซึ่งช่องหนึ่งครอบคลุมพื้นที่กว้างประมาณ 40 กม. ที่ระดับการซูมละเอียดที่สุดที่แอปใช้</td></tr>
@@ -231,6 +234,8 @@
       <li><strong>What is stored on your device:</strong> your last location (used to show data when the App opens and for PM2.5 alerts, which run in the background using this saved location) and up to 30 recent place names. This data stays on your device and is removed when you uninstall the App.</li>
     </ul>
 
+    <p>When you switch on location tracking on the water map screen, the App reads your location continuously only while that screen is open and the App is in the foreground, in order to show nearby stations and to warn you when you come close to a station that is over its bank. All of this is computed on your device; this location is never sent off the device, and tracking stops immediately when you leave the screen or the App goes to the background.</p>
+
     <h3>1.2 Device and Advertising Identifiers</h3>
     <ul>
       <li>Advertising identifiers (Android Advertising ID / GAID and iOS IDFA) and device information, used by Google AdMob to serve ads. On iOS, the App accesses the IDFA only if you allow it in the App Tracking Transparency (ATT) prompt.</li>
@@ -249,6 +254,7 @@
       <tr><td><strong>Google AdMob</strong></td><td>Serves in-app advertising and collects consent via the User Messaging Platform (UMP) for users in the EEA, UK, Switzerland, and applicable U.S. states</td></tr>
       <tr><td><strong>OpenWeather</strong></td><td>Weather forecast, rain map, place names and modelled AQI. Receives only rounded coordinates (about 1 km) through our backend proxy; never your name, email or device identifiers</td></tr>
       <tr><td><strong>Air4Thai (Pollution Control Department, Thailand)</strong></td><td>Official Air Quality Index (AQI) data source for Thailand</td></tr>
+      <tr><td><strong>Hydro-Informatics Institute (HII / ThaiWater), Thailand</strong></td><td>Nationwide telemetry water-level readings for the water map. The App never contacts ThaiWater directly: our backend proxy fetches one nationwide file that is identical for every user, and the request carries no coordinates or identifiers of yours, so ThaiWater cannot tell where any user is</td></tr>
       <tr><td><strong>Cloudflare Workers</strong></td><td>Backend proxy for weather/AQI data with caching and rate limiting; your IP address is used for rate limiting (our code does not record it)</td></tr>
       <tr><td><strong>RevenueCat</strong></td><td>Manages premium subscriptions and in-app purchases</td></tr>
       <tr><td><strong>RainViewer</strong></td><td>Rain radar imagery. The App never contacts RainViewer directly: our backend proxy fetches the frames, so RainViewer sees neither your IP address nor your device, only map tile numbers; at the most detailed zoom the App uses, one tile covers roughly 40 km</td></tr>
