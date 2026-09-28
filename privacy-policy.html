@@ -172,13 +172,14 @@
     <table>
       <tr><th>ผู้ให้บริการ</th><th>วัตถุประสงค์</th></tr>
       <tr><td><strong>Google AdMob</strong></td><td>แสดงโฆษณาในแอป และขอความยินยอมด้านความเป็นส่วนตัว (UMP) สำหรับผู้ใช้ในสหภาพยุโรป สหราชอาณาจักร สวิตเซอร์แลนด์ และรัฐต่างๆ ในสหรัฐฯ</td></tr>
-      <tr><td><strong>OpenWeather</strong></td><td>แหล่งข้อมูลพยากรณ์อากาศ แผนที่ฝน ชื่อสถานที่ และค่า AQI แบบจำลอง ได้รับพิกัดที่ปัดเศษแล้ว (ประมาณ 1 กม.) ผ่านเซิร์ฟเวอร์ตัวกลางของเราเท่านั้น ไม่ได้รับชื่อ อีเมล หรือตัวระบุอุปกรณ์ของท่าน</td></tr>
+      <tr><td><strong>OpenWeather</strong></td><td>แหล่งข้อมูลพยากรณ์อากาศ ชั้นเมฆ/อุณหภูมิ/ลม บนหน้าเรดาร์สภาพอากาศ ชื่อสถานที่ และค่า AQI แบบจำลอง ได้รับพิกัดที่ปัดเศษแล้ว (ประมาณ 1 กม.) ผ่านเซิร์ฟเวอร์ตัวกลางของเราเท่านั้น ไม่ได้รับชื่อ อีเมล หรือตัวระบุอุปกรณ์ของท่าน · ชั้นแผนที่เหล่านี้ดึงเป็นช่องแผนที่ (tile) ผ่านเซิร์ฟเวอร์ตัวกลางเช่นกัน ช่องหนึ่งกว้างประมาณ 10 กม. ที่ระดับซูมละเอียดที่สุด · สมาชิก Premium ที่แตะบนหน้าเรดาร์เพื่อดูค่า จะส่งพิกัดของจุดที่แตะ (ปัดเศษเหลือประมาณ 1 กม. เช่นกัน) ซึ่งเป็นจุดใดก็ได้บนแผนที่ ไม่จำเป็นต้องเป็นตำแหน่งของท่าน</td></tr>
       <tr><td><strong>กรมควบคุมมลพิษ (Air4Thai/PCD)</strong></td><td>แหล่งข้อมูลดัชนีคุณภาพอากาศ (AQI) อย่างเป็นทางการของประเทศไทย</td></tr>
       <tr><td><strong>สถาบันสารสนเทศทรัพยากรน้ำ (องค์การมหาชน) — สสน. / ThaiWater</strong></td><td>ข้อมูลระดับน้ำจากสถานีโทรมาตรทั่วประเทศ สำหรับหน้าแผนที่ระดับน้ำ แอปไม่ได้ติดต่อ สสน. โดยตรง เซิร์ฟเวอร์ตัวกลางของเราเป็นผู้ดึงข้อมูล และดึงเป็นไฟล์รวมทั้งประเทศไฟล์เดียวกันสำหรับผู้ใช้ทุกคน คำขอไม่มีพิกัดหรือตัวระบุใดๆ ของท่านแนบไปด้วย สสน. จึงไม่ทราบว่าใครอยู่ที่ใด</td></tr>
       <tr><td><strong>Cloudflare Workers</strong></td><td>เซิร์ฟเวอร์ตัวกลาง (proxy) สำหรับเรียกข้อมูลอากาศ/AQI พร้อมระบบแคชและจำกัดอัตราการเรียก ซึ่งใช้หมายเลข IP ของอุปกรณ์ท่านในการจำกัดอัตราการเรียก (โค้ดของเราไม่ได้บันทึกหมายเลข IP)</td></tr>
       <tr><td><strong>RevenueCat</strong></td><td>จัดการการสมัครสมาชิกแบบพรีเมียมและการซื้อในแอป</td></tr>
-      <tr><td><strong>RainViewer</strong></td><td>ภาพเรดาร์ฝน แอปไม่ได้ติดต่อ RainViewer โดยตรง เซิร์ฟเวอร์ตัวกลางของเราเป็นผู้ดึงภาพให้ RainViewer จึงไม่เห็นหมายเลข IP หรืออุปกรณ์ของท่าน และได้รับเพียงหมายเลขช่องแผนที่ (tile) ซึ่งช่องหนึ่งครอบคลุมพื้นที่กว้างประมาณ 40 กม. ที่ระดับการซูมละเอียดที่สุดที่แอปใช้</td></tr>
-      <tr><td><strong>Google Maps SDK (Android) / Apple Maps (iOS)</strong></td><td>แสดงแผนที่พื้นหลังของหน้าแผนที่ฝนและการ์ดเรดาร์</td></tr>
+      <tr><td><strong>RainViewer</strong></td><td>ภาพเรดาร์ฝน แอปไม่ได้ติดต่อ RainViewer โดยตรง เซิร์ฟเวอร์ตัวกลางของเราเป็นผู้ดึงภาพให้ RainViewer จึงไม่เห็นหมายเลข IP หรืออุปกรณ์ของท่าน และได้รับเพียงหมายเลขช่องแผนที่ (tile) ซึ่งช่องหนึ่งครอบคลุมพื้นที่กว้างประมาณ 300 กม. ที่ระดับการซูมละเอียดที่สุดที่แอปใช้ (ซูมระดับ 7 ซึ่งเป็นเพดานที่ RainViewer ให้บริการจริง)</td></tr>
+      <tr><td><strong>กรมอุตุนิยมวิทยาญี่ปุ่น (Japan Meteorological Agency — JMA)</strong></td><td>เส้นทางและตำแหน่งคาดการณ์ของพายุหมุนเขตร้อน สำหรับชั้นไต้ฝุ่นบนหน้าเรดาร์สภาพอากาศ แอปไม่ได้ติดต่อ JMA โดยตรง เซิร์ฟเวอร์ตัวกลางของเราเป็นผู้ดึงประกาศชุดเดียวกันสำหรับผู้ใช้ทุกคน คำขอไม่มีพิกัดหรือตัวระบุใดๆ ของท่านแนบไปด้วย</td></tr>
+      <tr><td><strong>Google Maps SDK (Android) / Apple Maps (iOS)</strong></td><td>แสดงแผนที่พื้นหลังของหน้าเรดาร์สภาพอากาศ หน้าแผนที่ระดับน้ำ และการ์ดเรดาร์</td></tr>
       <tr><td><strong>Google Play Services</strong></td><td>บริการพื้นฐานของระบบปฏิบัติการ Android</td></tr>
     </table>
     <p class="note">เราไม่ขายข้อมูลส่วนบุคคลของท่านให้แก่บุคคลภายนอกเพื่อวัตถุประสงค์ทางการตลาดโดยเด็ดขาด</p>
@@ -252,13 +253,14 @@
     <table>
       <tr><th>Provider</th><th>Purpose</th></tr>
       <tr><td><strong>Google AdMob</strong></td><td>Serves in-app advertising and collects consent via the User Messaging Platform (UMP) for users in the EEA, UK, Switzerland, and applicable U.S. states</td></tr>
-      <tr><td><strong>OpenWeather</strong></td><td>Weather forecast, rain map, place names and modelled AQI. Receives only rounded coordinates (about 1 km) through our backend proxy; never your name, email or device identifiers</td></tr>
+      <tr><td><strong>OpenWeather</strong></td><td>Weather forecast, the cloud/temperature/wind layers on the weather radar screen, place names and modelled AQI. Receives only rounded coordinates (about 1 km) through our backend proxy; never your name, email or device identifiers. These layers are fetched as map tiles through the same proxy; one tile covers roughly 10 km at the most detailed zoom. When a Premium user taps the radar map to read the value at a point, the tapped coordinate is sent the same way, rounded to about 1 km; it is any point on the map, not necessarily where you are</td></tr>
       <tr><td><strong>Air4Thai (Pollution Control Department, Thailand)</strong></td><td>Official Air Quality Index (AQI) data source for Thailand</td></tr>
       <tr><td><strong>Hydro-Informatics Institute (HII / ThaiWater), Thailand</strong></td><td>Nationwide telemetry water-level readings for the water map. The App never contacts ThaiWater directly: our backend proxy fetches one nationwide file that is identical for every user, and the request carries no coordinates or identifiers of yours, so ThaiWater cannot tell where any user is</td></tr>
       <tr><td><strong>Cloudflare Workers</strong></td><td>Backend proxy for weather/AQI data with caching and rate limiting; your IP address is used for rate limiting (our code does not record it)</td></tr>
       <tr><td><strong>RevenueCat</strong></td><td>Manages premium subscriptions and in-app purchases</td></tr>
-      <tr><td><strong>RainViewer</strong></td><td>Rain radar imagery. The App never contacts RainViewer directly: our backend proxy fetches the frames, so RainViewer sees neither your IP address nor your device, only map tile numbers; at the most detailed zoom the App uses, one tile covers roughly 40 km</td></tr>
-      <tr><td><strong>Google Maps SDK (Android) / Apple Maps (iOS)</strong></td><td>Base map on the rain map screen and the radar card</td></tr>
+      <tr><td><strong>RainViewer</strong></td><td>Rain radar imagery. The App never contacts RainViewer directly: our backend proxy fetches the frames, so RainViewer sees neither your IP address nor your device, only map tile numbers; at the most detailed zoom the App uses (zoom 7, which is RainViewer’s own ceiling), one tile covers roughly 300 km at Thailand’s latitude</td></tr>
+      <tr><td><strong>Japan Meteorological Agency (JMA)</strong></td><td>Tropical cyclone tracks and forecast positions for the typhoon layer on the weather radar screen. The App never contacts JMA directly: our backend proxy fetches the same bulletins for every user, and the request carries no coordinates or identifiers of yours</td></tr>
+      <tr><td><strong>Google Maps SDK (Android) / Apple Maps (iOS)</strong></td><td>Base map on the weather radar screen, the water map screen and the radar card</td></tr>
       <tr><td><strong>Google Play Services</strong></td><td>Core Android platform services</td></tr>
     </table>
     <p class="note">We do not sell your personal data to third parties for marketing purposes.</p>
