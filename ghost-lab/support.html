@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ghost Lab - ช่วยเหลือและติดต่อ (Support)</title>
+<meta name="description" content="หน้าช่วยเหลือและติดต่อของแอป Ghost Lab แอปบันเทิงที่ใช้เซ็นเซอร์แม่เหล็กจริงพร้อมเอฟเฟกต์จำลอง">
+<style>
+  :root { --bg:#eef2f0; --card:#fff; --ink:#14201b; --muted:#56665e; --accent:#1f7a52; --line:#d5e0da; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0b1110; --card:#141d1a; --ink:#e8f1ec; --muted:#9fb3a9; --accent:#6fd3a0; --line:#26352f; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); padding:16px;
+    font-family:"IBM Plex Sans Thai Looped","Sarabun",system-ui,-apple-system,"Segoe UI",sans-serif; line-height:1.65; }
+  main { max-width:720px; margin:0 auto; background:var(--card); border:1px solid var(--line); border-radius:20px; padding:28px 24px; }
+  h1 { font-size:1.6rem; margin:0 0 4px; }
+  h2 { font-size:1.15rem; margin:28px 0 8px; }
+  p.sub { margin:0 0 20px; color:var(--muted); }
+  a { color:var(--accent); }
+  .contact { border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin:16px 0; }
+  details { border-top:1px solid var(--line); padding:10px 0; }
+  summary { cursor:pointer; font-weight:600; }
+  hr { border:0; border-top:1px solid var(--line); margin:32px 0; }
+  .note { color:var(--muted); font-size:.9rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Ghost Lab - ช่วยเหลือและติดต่อ</h1>
+  <p class="sub">แอปนี้เพื่อความบันเทิง ไม่สามารถตรวจจับผีหรือสิ่งเหนือธรรมชาติได้ ค่าสนามแม่เหล็กและมิเตอร์เสียงความถี่ต่ำเป็นค่าจริงจากเซ็นเซอร์ในเครื่อง ส่วนเอฟเฟกต์ทั้งหมดเป็นการจำลองและมีป้าย SIM</p>
+
+  <div class="contact">
+    <strong>ติดต่อผู้พัฒนา</strong><br>
+    อีเมล: <a href="mailto:poommipat.l@gmail.com">poommipat.l@gmail.com</a><br>
+    <span class="note">โดยปกติตอบกลับภายในไม่กี่วันทำการ โปรดแจ้งรุ่นเครื่อง เวอร์ชัน iOS หรือ Android และอธิบายปัญหาที่พบ</span>
+  </div>
+
+  <h2>คำถามที่พบบ่อย</h2>
+
+  <details>
+    <summary>ค่าไหนจริง ค่าไหนจำลอง</summary>
+    <p>ค่า µT ในหน้าสแกน กราฟ ไฟระดับ และมิเตอร์เสียงความถี่ต่ำเป็นค่าจริงจากเซ็นเซอร์ในเครื่อง ส่วน Spirit Box, EVP, กล้องเอฟเฟกต์ และเหตุการณ์สยองเป็นเอฟเฟกต์จำลอง มีป้าย SIM และ Event Log บอกที่มาของทุกเหตุการณ์ว่ามาจากค่าแม่เหล็กจริงหรือจากการสุ่ม ถ้าต้องการเห็นค่าจริงอย่างเดียว ให้เลือก Science Mode ซึ่งปิดการสุ่มและเอฟเฟกต์ทั้งหมด</p>
+  </details>
+
+  <details>
+    <summary>ค่า µT ไม่ค่อยขยับ หรือกระโดดเอง</summary>
+    <p>ลองนำแม่เหล็กติดตู้เย็นหรือลำโพงเข้าใกล้เครื่องช้าๆ ตำแหน่งของเซ็นเซอร์ต่างกันในแต่ละรุ่น ส่วนใหญ่อยู่ใกล้ส่วนบนของเครื่อง ค่าจะลดลงเร็วมากเมื่อห่างออกไป ถ้าค่ากระโดดเอง ให้วางเครื่องนิ่งๆ ห่างจากโลหะ เคสแม่เหล็ก และที่ชาร์จไร้สาย</p>
+  </details>
+
+  <details>
+    <summary>ทำไมวัดไฟบ้าน 50 Hz หรือหาสายไฟในผนังไม่ได้</summary>
+    <p>เซ็นเซอร์แม่เหล็กในมือถืออ่านค่าช้ากว่าที่ต้องใช้วัดสนามที่สลับทิศ 50 ครั้งต่อวินาที มือถือจึงวัดแบบเครื่องวัดมืออาชีพไม่ได้ ห้ามใช้แอปนี้ตัดสินเรื่องความปลอดภัย สุขภาพ หรือหาสายไฟในผนัง บทเรียนที่ 3 ในแอปอธิบายเรื่องนี้</p>
+  </details>
+
+  <details>
+    <summary>Spirit Box ตอบคำถามของฉันหรือเปล่า</summary>
+    <p>ไม่ Spirit Box เล่นคำที่สุ่มจากชุดคำที่กำหนดไว้ ไม่ฟังเสียงของคุณ และไม่ขึ้นกับเซ็นเซอร์ใดๆ</p>
+  </details>
+
+  <details>
+    <summary>ไม่ได้ยินเสียงเอฟเฟกต์</summary>
+    <p>บน iPhone ให้ปิดสวิตช์เงียบด้านข้างเครื่องและเพิ่มเสียง แอปทำตามสวิตช์เงียบเสมอ บน Android ให้เพิ่มเสียงสื่อ (media) และตรวจว่าเปิด "เสียงเอฟเฟกต์" ในหน้าตั้งค่าของแอป</p>
+  </details>
+
+  <details>
+    <summary>ไมโครโฟนหรือกล้องไม่ทำงาน</summary>
+    <p>ถ้าเคยปฏิเสธสิทธิ์ ให้เปิดใน การตั้งค่า ของเครื่อง &gt; Ghost Lab แล้วอนุญาตไมโครโฟนหรือกล้อง หน้ากล้องเอฟเฟกต์มีปุ่มพาไปที่การตั้งค่าให้</p>
+  </details>
+
+  <details>
+    <summary>ปิดแสงวาบ ภาพกระตุก หรือภาพสั่น</summary>
+    <p>เปิดแท็บตั้งค่าแล้วปิด "แสงวาบและจอกะพริบ" หรือ "ภาพ glitch และภาพสั่น" แสงวาบเต็มจอจำกัดไม่เกิน 3 ครั้งต่อวินาทีเสมอ ภาพกระตุกปิดเองเมื่อเปิด "ลดการเคลื่อนไหว" ในการตั้งค่าเครื่อง</p>
+  </details>
+
+  <details>
+    <summary>ไฟล์เสียง EVP ที่บันทึกไว้อยู่ที่ไหน</summary>
+    <p>อยู่ในพื้นที่เก็บข้อมูลของแอปบนเครื่องของคุณเท่านั้น ไม่ถูกอัปโหลด เวอร์ชันนี้ยังไม่มีปุ่มลบในแอป การลบแอปจะลบไฟล์ทั้งหมด</p>
+  </details>
+
+  <details>
+    <summary>ข้อมูลส่วนตัว</summary>
+    <p>แอปไม่เก็บและไม่ส่งข้อมูลใดๆ ออกจากเครื่อง ไม่มีโฆษณาและระบบติดตาม รายละเอียดอยู่ใน<a href="privacy-policy.html">นโยบายความเป็นส่วนตัว</a></p>
+  </details>
+
+  <hr>
+
+  <div lang="en">
+  <h1 style="font-size:1.35rem">Ghost Lab - Support</h1>
+  <p class="sub">For entertainment only: this app cannot detect ghosts or anything paranormal. The magnetic and low-frequency sound readings are real values from your phone's sensors; every effect is simulated and marked SIM.</p>
+
+  <div class="contact">
+    <strong>Contact the developer</strong><br>
+    Email: <a href="mailto:poommipat.l@gmail.com">poommipat.l@gmail.com</a><br>
+    <span class="note">Replies usually take a few working days. Please include your phone model, iOS or Android version and a short description of the problem.</span>
+  </div>
+
+  <h2>FAQ</h2>
+
+  <details>
+    <summary>What is real and what is simulated?</summary>
+    <p>The µT reading on the Scan tab, the graph, the level lights and the low-frequency sound meter are real values from your phone's sensors. Spirit Box, EVP, the effect camera and spooky events are simulated effects, marked SIM, and the Event Log shows whether each event came from a real magnetic change or from chance. For real values only, choose Science Mode, which turns off all randomness and effects.</p>
+  </details>
+
+  <details>
+    <summary>The µT value barely moves, or jumps by itself</summary>
+    <p>Move a fridge magnet or a speaker slowly towards the phone. Where the sensor sits differs by model, usually near the top, and the value falls quickly with distance. If it jumps by itself, keep the phone still and away from metal, magnetic cases and wireless chargers.</p>
+  </details>
+
+  <details>
+    <summary>Why can't it measure 50 Hz mains or find wires in walls?</summary>
+    <p>A phone's magnetic sensor reads too slowly for a field that flips 50 times a second, so it cannot measure it the way a professional meter does. Do not use this app for safety or health decisions, or to find wiring in walls. Lesson 3 in the app explains why.</p>
+  </details>
+
+  <details>
+    <summary>Does the Spirit Box answer my questions?</summary>
+    <p>No. It plays words picked at random from a fixed word list. It does not listen to you and does not follow any sensor.</p>
+  </details>
+
+  <details>
+    <summary>I can't hear the effects</summary>
+    <p>On iPhone, turn off the silent switch on the side and turn the volume up; the app always respects the silent switch. On Android, turn up the media volume. Also check that Effect sounds is on in the app's Settings tab.</p>
+  </details>
+
+  <details>
+    <summary>The microphone or camera does not work</summary>
+    <p>If you declined the permission, open your phone's Settings &gt; Ghost Lab and allow the microphone or camera. The effect camera screen has a button that takes you there.</p>
+  </details>
+
+  <details>
+    <summary>Turning off flashes, glitches or shaking</summary>
+    <p>In the Settings tab, turn off "Flashes and screen flicker" or "Glitch and shaking images". Full-screen flashes are always limited to 3 per second, and glitches turn off by themselves when Reduce Motion is on in your phone settings.</p>
+  </details>
+
+  <details>
+    <summary>Where are my saved EVP recordings?</summary>
+    <p>In the app's storage on your phone only; they are never uploaded. This version has no in-app delete button; deleting the app removes them all.</p>
+  </details>
+
+  <details>
+    <summary>Privacy</summary>
+    <p>The app collects nothing and sends nothing off your phone. There are no ads and no trackers. Details are in the <a href="privacy-policy.html">Privacy Policy</a>.</p>
+  </details>
+  </div>
+</main>
+</body>
+</html>
