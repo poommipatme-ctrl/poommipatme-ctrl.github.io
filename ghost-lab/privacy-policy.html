@@ -22,15 +22,16 @@
   ul { padding-left:1.3em; }
   hr { border:0; border-top:1px solid var(--line); margin:32px 0; }
   .note { color:var(--muted); font-size:.9rem; }
+  .draft { border:1px dashed var(--accent); border-radius:12px; padding:10px 14px; margin:0 0 16px; }
 </style>
 </head>
 <body>
 <main>
   <h1>นโยบายความเป็นส่วนตัว</h1>
-  <p class="sub">แอป Ghost Lab · มีผลบังคับใช้ตั้งแต่วันที่ 22 ตุลาคม 2026</p>
+  <p class="sub">แอป Ghost Lab · มีผลบังคับใช้ตั้งแต่ Ghost Lab เวอร์ชัน 1.1.0 · <strong>โฆษณาและการซื้อในแอปมีตั้งแต่เวอร์ชัน 1.1.0</strong> เวอร์ชันก่อนหน้าไม่มีทั้งสองอย่าง และไม่ส่งข้อมูลใดออกจากเครื่อง</p>
 
   <div class="summary">
-    <strong>สรุป:</strong> แอปนี้ไม่เก็บ ไม่ส่ง และไม่ขายข้อมูลของคุณ ไม่มีบัญชีผู้ใช้ ไม่มีโฆษณา ไม่มีระบบวิเคราะห์การใช้งาน และไม่มีระบบติดตาม เสียงและภาพจากกล้องประมวลผลบนเครื่องของคุณเท่านั้น และไม่มีข้อมูลใดถูกส่งมาถึงผู้พัฒนา
+    <strong>สรุป:</strong> ไม่มีบัญชีผู้ใช้ และผู้พัฒนาไม่มีเซิร์ฟเวอร์ เสียงและภาพจากกล้องประมวลผลบนเครื่องของคุณเท่านั้น ไม่ถูกบันทึกและไม่ถูกส่งออก ตั้งแต่เวอร์ชัน 1.1.0 แอปมีโฆษณาจาก Google AdMob ซึ่งส่งข้อมูลอุปกรณ์และข้อมูลโฆษณาไปที่ Google และบน Android ตัว AI หาท่าทาง (Google ML Kit) ส่งข้อมูลวินิจฉัยของตัวมันเองไปที่ Google โดยไม่ส่งภาพ ข้อมูลเหล่านี้ไปถึง Google ไม่ได้มาถึงผู้พัฒนา
   </div>
 
   <h2>1. ผู้รับผิดชอบ</h2>
@@ -40,46 +41,64 @@
   <ul>
     <li><strong>เซ็นเซอร์แม่เหล็ก (magnetometer):</strong> ใช้แสดงค่าสนามแม่เหล็ก กราฟ และบทเรียนขณะที่คุณเปิดหน้านั้นอยู่ ค่าเหล่านี้ไม่ถูกบันทึกเก็บไว้ และไม่ถูกส่งออกจากเครื่อง</li>
     <li><strong>ไมโครโฟน:</strong> แอปขอสิทธิ์ครั้งแรกเมื่อคุณเปิด EVP, มิเตอร์เสียงความถี่ต่ำ หรือสวิตช์ไมค์ในหน้าสแกน เสียงถูกประมวลผลในหน่วยความจำของเครื่องขณะใช้งานเท่านั้น และไม่ถูกบันทึก ยกเว้นเมื่อคุณกดปุ่มบันทึกในหน้า EVP ซึ่งจะบันทึกเป็นไฟล์เสียง (.wav) ในพื้นที่เก็บข้อมูลของแอปบนเครื่องของคุณ</li>
-    <li><strong>กล้อง:</strong> แอปขอสิทธิ์ครั้งแรกเมื่อคุณเปิดกล้องเอฟเฟกต์ แอปแสดงภาพสดจากกล้องเป็นพื้นหลังของเอฟเฟกต์จำลองเท่านั้น ไม่ถ่ายภาพ ไม่บันทึกวิดีโอ และไม่ส่งภาพออกจากเครื่อง</li>
-    <li><strong>การตั้งค่า:</strong> เช่น โหมด ภาษา เสียง และการสั่น บันทึกไว้ในเครื่องเพื่อให้แอปจำค่าที่คุณเลือก</li>
-    <li><strong>ตำแหน่ง:</strong> แอปไม่ขอและไม่ใช้ตำแหน่งของคุณ</li>
+    <li><strong>กล้อง:</strong> แอปขอสิทธิ์ครั้งแรกเมื่อคุณเปิดหน้ากล้อง ภาพสดใช้เป็นพื้นหลังของเอฟเฟกต์จำลอง และประมวลผลบนเครื่องเพื่อหาท่าทางของคน (กล้องท่าทาง) และส่วนของภาพที่เปลี่ยน (กล้องจับการเคลื่อนไหว) แอปไม่ถ่ายภาพ ไม่บันทึกวิดีโอ ไม่เก็บภาพไว้ และไม่ส่งภาพออกจากเครื่อง ผลที่ได้มีแค่จุดท่าทางและกรอบบนจอขณะนั้น</li>
+    <li><strong>เซ็นเซอร์การเคลื่อนไหวของเครื่อง (accelerometer และ gyroscope):</strong> ใช้ขณะเปิดกล้องจับการเคลื่อนไหว เพื่อรู้ว่าเครื่องวางนิ่งอยู่หรือไม่ ไม่ถูกบันทึกและไม่ถูกส่งออก</li>
+    <li><strong>การตั้งค่า:</strong> เช่น โหมด ภาษา เสียง การสั่น ความไวของกล้องจับการเคลื่อนไหว และสถานะว่าซื้อ "ลบโฆษณา" แล้ว บันทึกไว้ในเครื่องเพื่อให้แอปจำค่าที่คุณเลือก</li>
+    <li><strong>ตำแหน่ง:</strong> แอปไม่ขอสิทธิ์ตำแหน่งและไม่ใช้ GPS แต่ Google AdMob อาจประมาณตำแหน่งคร่าวๆ จาก IP address (ข้อ 3)</li>
   </ul>
 
-  <h2>3. การส่งข้อมูลและบุคคลที่สาม</h2>
-  <p>แอปไม่มีเซิร์ฟเวอร์ และไม่ส่งข้อมูลใดๆ ผ่านอินเทอร์เน็ต แอปไม่มีโฆษณา ระบบวิเคราะห์การใช้งาน ระบบรายงานข้อผิดพลาด หรือ SDK ของบุคคลที่สามที่เก็บข้อมูล จึงไม่มีการแบ่งปันหรือขายข้อมูลให้ใคร</p>
-  <p>Apple (App Store) และ Google (Google Play) อาจเก็บข้อมูลการดาวน์โหลดและการใช้งานตามนโยบายของบริษัทเหล่านั้นเอง ซึ่งอยู่นอกการควบคุมของผู้พัฒนา</p>
+  <h2>3. โฆษณา (Google AdMob · ตั้งแต่เวอร์ชัน 1.1.0)</h2>
+  <p>แบนเนอร์โฆษณาแสดงเฉพาะแท็บกล้อง &amp; เอฟเฟกต์และแท็บตั้งค่าใน Fun Mode ไม่แสดงบนหน้ากล้อง แท็บสแกน Science Mode หรือบทเรียน และจำกัดเนื้อหาโฆษณาไว้ที่ระดับ PG</p>
+  <ul>
+    <li><strong>ข้อมูลที่ Google Mobile Ads SDK เก็บและแบ่งปันโดยอัตโนมัติ (ตามเอกสารของ Google):</strong> IP address (อาจใช้ประมาณตำแหน่งคร่าวๆ), การใช้งานในแอป เช่น การเปิดแอปและการแตะโฆษณา, ข้อมูลวินิจฉัยประสิทธิภาพของแอปและ SDK, และตัวระบุอุปกรณ์ เช่น advertising ID (Android) หรือ IDFA (iPhone เมื่อคุณอนุญาตการติดตาม) ใช้เพื่อโฆษณา การวิเคราะห์ และป้องกันการฉ้อโกง ส่งแบบเข้ารหัส</li>
+    <li><strong>ความยินยอม:</strong> ในประเทศที่กฎหมายกำหนด (เช่น EEA และสหราชอาณาจักร) แอปแสดงแบบฟอร์มขอความยินยอมของ Google ก่อนโหลดโฆษณา</li>
+    <li><strong>เปลี่ยนหรือถอนความยินยอม:</strong> ในประเทศเหล่านั้น แท็บตั้งค่ามีหัวข้อ "ความเป็นส่วนตัวของโฆษณา" กดปุ่ม "ตัวเลือกความเป็นส่วนตัว" เพื่อเปิดแบบฟอร์มของ Google อีกครั้ง แล้วเปลี่ยนหรือถอนความยินยอมได้ทุกเมื่อ ถ้าถอนความยินยอม แอปหยุดขอโฆษณาใหม่ทันที</li>
+    <li><strong>iPhone:</strong> หลังแบบฟอร์มความยินยอม iOS จะถามว่าจะให้แอปติดตามหรือไม่ ถ้าไม่ให้ โฆษณายังแสดงแต่ไม่ปรับตามคุณ และแอปทำงานเหมือนเดิม เปลี่ยนได้ทุกเมื่อใน การตั้งค่า &gt; ความเป็นส่วนตัวและความปลอดภัย &gt; การติดตาม</li>
+    <li><strong>Android:</strong> รีเซ็ตหรือลบ advertising ID ได้ในการตั้งค่าของเครื่อง</li>
+    <li>Google ใช้ข้อมูลตามนโยบายของ Google: <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a></li>
+  </ul>
 
-  <h2>4. การสำรองข้อมูลของเครื่อง</h2>
+  <h2>4. AI หาท่าทางบน Android (Google ML Kit)</h2>
+  <p>บน Android กล้องท่าทางใช้ Google ML Kit แบบที่โมเดลอยู่ในแอป ภาพไม่ถูกส่งออก แต่ตาม<em>เอกสารของ Google</em> ML Kit ส่งข้อมูลวินิจฉัยและสถิติการใช้งานของตัวมันเองไปที่ Google ได้แก่ ข้อมูลอุปกรณ์ (ผู้ผลิต รุ่น เวอร์ชัน OS), ชื่อแพ็กเกจและเวอร์ชันของแอป, ตัวระบุต่อการติดตั้ง (ไม่ได้ใช้ระบุตัวคุณหรือตัวเครื่อง), ค่าประสิทธิภาพ เช่น เวลาประมวลผล, การตั้งค่า API, ประเภทเหตุการณ์และรหัสข้อผิดพลาด และสำหรับการจับท่าทาง Firebase Remote Config และ Firebase Installations ส่งแบบเข้ารหัส และ Google ระบุว่าไม่ส่งต่อให้บุคคลที่สาม บน iPhone กล้องท่าทางใช้ Apple Vision บนเครื่อง และไม่ส่งข้อมูลใด กล้องจับการเคลื่อนไหวเป็นโค้ดของแอปเองทั้งสองระบบ และไม่ส่งข้อมูลใด</p>
+
+  <h2>5. การซื้อในแอป ("ลบโฆษณา" · ตั้งแต่เวอร์ชัน 1.1.0)</h2>
+  <p>การซื้อและการกู้คืนการซื้อทำผ่าน App Store หรือ Google Play ผู้พัฒนาไม่ได้รับข้อมูลการชำระเงินของคุณ แอปเก็บเพียงสถานะว่าซื้อแล้วไว้ในเครื่อง และตรวจกับสโตร์เมื่อออนไลน์ หลังซื้อแล้ว แอปไม่โหลด Google AdMob และไม่ขอความยินยอมหรือสิทธิ์การติดตามอีก</p>
+
+  <h2>6. ผู้ให้บริการอื่น</h2>
+  <p>ผู้พัฒนาไม่มีเซิร์ฟเวอร์และไม่ได้รับข้อมูลใดจากแอป แอปไม่มีระบบวิเคราะห์การใช้งานหรือระบบรายงานข้อผิดพลาดของผู้พัฒนา Apple (App Store) และ Google (Google Play) อาจเก็บข้อมูลการดาวน์โหลด การซื้อ และการใช้งานตามนโยบายของบริษัทเหล่านั้นเอง</p>
+
+  <h2>7. การสำรองข้อมูลของเครื่อง</h2>
   <p>ถ้าคุณเปิดการสำรองข้อมูลของเครื่อง (เช่น iCloud หรือการสำรองข้อมูลของ Google) ระบบของเครื่องอาจรวมการตั้งค่าของแอปและไฟล์เสียง EVP ที่คุณบันทึกไว้ในข้อมูลสำรองของคุณเอง ผู้พัฒนาไม่ได้รับและเข้าถึงข้อมูลสำรองนั้นไม่ได้</p>
 
-  <h2>5. การลบข้อมูลและการเพิกถอนสิทธิ์</h2>
+  <h2>8. การลบข้อมูลและการเพิกถอนสิทธิ์</h2>
   <ul>
-    <li>ลบแอปออกจากเครื่องเพื่อลบการตั้งค่าและไฟล์เสียง EVP ทั้งหมด (เวอร์ชันนี้ยังไม่มีปุ่มลบไฟล์ EVP ในแอป)</li>
-    <li>เพิกถอนสิทธิ์ไมโครโฟนหรือกล้องได้ทุกเมื่อในการตั้งค่าของเครื่อง ฟีเจอร์ที่ใช้เซ็นเซอร์แม่เหล็กยังใช้ได้ตามปกติ</li>
+    <li>ลบแอปออกจากเครื่องเพื่อลบการตั้งค่าและไฟล์เสียง EVP ทั้งหมด (เวอร์ชันนี้ยังไม่มีปุ่มลบไฟล์ EVP ในแอป) การซื้อ "ลบโฆษณา" ยังอยู่กับบัญชีสโตร์ของคุณ และกู้คืนได้</li>
+    <li>เพิกถอนสิทธิ์ไมโครโฟน กล้อง หรือการติดตามได้ทุกเมื่อในการตั้งค่าของเครื่อง ฟีเจอร์ที่ใช้เซ็นเซอร์แม่เหล็กยังใช้ได้ตามปกติ</li>
+    <li>ข้อมูลที่ Google เก็บผ่าน AdMob หรือ ML Kit อยู่ที่ Google ผู้พัฒนาเข้าถึงหรือลบไม่ได้ ติดต่อ Google ตามนโยบายในข้อ 3</li>
   </ul>
 
-  <h2>6. เด็ก</h2>
-  <p>แอปไม่เก็บข้อมูลส่วนบุคคลจากผู้ใช้คนใด รวมถึงเด็ก</p>
+  <h2>9. เด็ก</h2>
+  <p>แอปนี้ไม่ได้ออกแบบสำหรับเด็กอายุต่ำกว่า 13 ปี ผู้พัฒนาไม่เก็บข้อมูลส่วนบุคคลจากผู้ใช้คนใด และจำกัดเนื้อหาโฆษณาไว้ที่ระดับ PG</p>
 
-  <h2>7. เมื่อคุณติดต่อผู้พัฒนา</h2>
+  <h2>10. เมื่อคุณติดต่อผู้พัฒนา</h2>
   <p>ถ้าคุณส่งอีเมลมา ผู้พัฒนาจะใช้อีเมลและข้อความนั้นเพื่อตอบคุณเท่านั้น และไม่นำไปใช้ทำการตลาด</p>
 
-  <h2>8. สิทธิ์ของคุณตามกฎหมาย</h2>
-  <p>เนื่องจากแอปไม่เก็บข้อมูลส่วนบุคคล ผู้พัฒนาจึงไม่มีข้อมูลของคุณที่จะเข้าถึง แก้ไข หรือลบได้ หากมีคำถามตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล (PDPA) หรือ GDPR โปรดติดต่ออีเมลด้านบน</p>
+  <h2>11. สิทธิ์ของคุณตามกฎหมาย</h2>
+  <p>ผู้พัฒนาไม่มีข้อมูลส่วนบุคคลของคุณที่จะเข้าถึง แก้ไข หรือลบได้ ข้อมูลโฆษณาและข้อมูลวินิจฉัยอยู่ที่ Google หากมีคำถามตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล (PDPA) หรือ GDPR โปรดติดต่ออีเมลด้านบน</p>
 
-  <h2>9. การเปลี่ยนแปลงนโยบาย</h2>
-  <p>ถ้าแอปเปลี่ยนวิธีใช้ข้อมูล ผู้พัฒนาจะแก้ไขหน้านี้และวันที่มีผลบังคับใช้ก่อนเผยแพร่เวอร์ชันนั้น</p>
+  <h2>12. การเปลี่ยนแปลงนโยบาย</h2>
+  <p>ถ้าแอปเปลี่ยนวิธีใช้ข้อมูล ผู้พัฒนาจะแก้ไขหน้านี้ก่อนเผยแพร่เวอร์ชันนั้น</p>
 
   <p class="note">หน้าช่วยเหลือ: <a href="support.html">support.html</a></p>
 
   <hr>
 
   <div lang="en">
-  <h1 style="font-size:1.35rem">Privacy Policy</h1>
-  <p class="sub">Ghost Lab · Effective 22 October 2026</p>
+  <h1>Privacy Policy</h1>
+  <p class="sub">Ghost Lab · Effective from Ghost Lab version 1.1.0 · <strong>Ads and in-app purchases start with version 1.1.0</strong>; earlier versions have neither and send no data off the device.</p>
 
   <div class="summary">
-    <strong>Summary:</strong> this app does not collect, send or sell your data. There is no account, no ads, no analytics and no tracking. Sound and camera images are processed on your device only, and nothing reaches the developer.
+    <strong>Summary:</strong> there is no account and the developer has no server. Sound and camera images are processed on your device only; they are never recorded or sent. From version 1.1.0 the app shows ads from Google AdMob, which sends device and ad data to Google, and on Android the pose AI (Google ML Kit) sends its own diagnostic data to Google, never images. This data goes to Google, not to the developer.
   </div>
 
   <h2>1. Who is responsible</h2>
@@ -89,35 +108,53 @@
   <ul>
     <li><strong>Magnetometer:</strong> used to show the magnetic field reading, the graph and the lessons while that screen is open. The readings are not stored and never leave your device.</li>
     <li><strong>Microphone:</strong> asked for the first time you open EVP, the low-frequency sound meter or the mic switch on the Scan tab. Sound is processed in your device's memory while in use and is not recorded, except when you tap Save on the EVP screen, which saves an audio file (.wav) in the app's storage on your device.</li>
-    <li><strong>Camera:</strong> asked for the first time you open the effect camera. The live camera view is only shown behind simulated effects. No photo or video is taken, saved or sent anywhere.</li>
-    <li><strong>Settings</strong> such as mode, language, sound and vibration are saved on your device so the app remembers your choices.</li>
-    <li><strong>Location:</strong> the app does not ask for or use your location.</li>
+    <li><strong>Camera:</strong> asked for the first time you open the camera screen. The live view is shown behind simulated effects and processed on your device to find the pose of people (pose camera) and the parts of the picture that changed (motion camera). No photo or video is taken, stored or sent anywhere; the only results are the pose points and the box on screen at that moment.</li>
+    <li><strong>Motion sensors (accelerometer and gyroscope):</strong> used while the motion camera is on, to know whether the phone is resting still. Not stored, never sent.</li>
+    <li><strong>Settings</strong> such as mode, language, sound, vibration, motion camera sensitivity and whether you bought "Remove ads" are saved on your device so the app remembers your choices.</li>
+    <li><strong>Location:</strong> the app does not ask for location permission or use GPS, but Google AdMob may estimate a general location from your IP address (section 3).</li>
   </ul>
 
-  <h2>3. Sending data and third parties</h2>
-  <p>The app has no server and sends no data over the internet. It contains no ads, analytics, crash reporting or other third-party SDK that collects data, so nothing is shared with or sold to anyone.</p>
-  <p>Apple (App Store) and Google (Google Play) may collect download and usage information under their own policies, outside the developer's control.</p>
+  <h2>3. Advertising (Google AdMob, from version 1.1.0)</h2>
+  <p>The banner appears only on the Camera &amp; FX and Settings tabs in Fun Mode, never on the camera, the Scan tab, Science Mode or the lessons, and ad content is limited to PG.</p>
+  <ul>
+    <li><strong>Data the Google Mobile Ads SDK collects and shares automatically (as Google documents it):</strong> IP address (which may be used to estimate a general location), product interactions such as app launches and ad taps, diagnostic information about app and SDK performance, and device identifiers such as the Android advertising ID or, on iPhone if you allow tracking, the IDFA. Used for advertising, analytics and fraud prevention, encrypted in transit.</li>
+    <li><strong>Consent:</strong> where the law requires it (for example the EEA and the UK), the app shows Google's consent form before any ad loads.</li>
+    <li><strong>Changing or withdrawing consent:</strong> in those regions the Settings tab has an "Ad privacy" section. Tap "Privacy options" to open Google's form again and change or withdraw your consent at any time. If you withdraw it, the app stops requesting new ads at once.</li>
+    <li><strong>iPhone:</strong> after the consent form, iOS asks whether the app may track you. If you say no, ads still appear but are not personalized, and the app works the same. You can change this at any time in Settings &gt; Privacy &amp; Security &gt; Tracking.</li>
+    <li><strong>Android:</strong> you can reset or delete your advertising ID in your device settings.</li>
+    <li>Google uses this data under its own policy: <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a></li>
+  </ul>
 
-  <h2>4. Device backups</h2>
+  <h2>4. Pose AI on Android (Google ML Kit)</h2>
+  <p>On Android the pose camera uses Google ML Kit with the model inside the app. Images are never sent, but <em>according to Google's documentation</em> ML Kit sends its own diagnostics and usage statistics to Google: device information (manufacturer, model, OS version), the app's package name and version, per-installation identifiers (not meant to identify you or the device), performance metrics such as latency, API configuration, event types and error codes, and for the pose feature Firebase Remote Config and Firebase Installations. It is encrypted in transit, and Google states it is not transferred to third parties. On iPhone the pose camera uses Apple Vision on the device and sends nothing. The motion camera is the app's own code on both systems and sends nothing.</p>
+
+  <h2>5. In-app purchase ("Remove ads", from version 1.1.0)</h2>
+  <p>Purchases and restores go through the App Store or Google Play. The developer receives no payment details. The app keeps only a "bought" flag on your device and checks it with the store when online. Once bought, the app no longer loads Google AdMob and asks for no consent or tracking permission.</p>
+
+  <h2>6. Other providers</h2>
+  <p>The developer has no server and receives no data from the app. The app has no analytics or crash reporting of the developer's own. Apple (App Store) and Google (Google Play) may collect download, purchase and usage information under their own policies.</p>
+
+  <h2>7. Device backups</h2>
   <p>If you turn on device backups (such as iCloud or Google backup), your device may include the app's settings and any EVP audio you saved in your own backup. The developer does not receive and cannot access that backup.</p>
 
-  <h2>5. Deleting data and withdrawing permission</h2>
+  <h2>8. Deleting data and withdrawing permission</h2>
   <ul>
-    <li>Delete the app to remove its settings and all saved EVP audio (this version has no in-app button to delete EVP files).</li>
-    <li>You can withdraw microphone or camera permission at any time in your device settings. The magnetic sensor features keep working.</li>
+    <li>Delete the app to remove its settings and all saved EVP audio (this version has no in-app button to delete EVP files). A "Remove ads" purchase stays with your store account and can be restored.</li>
+    <li>You can withdraw microphone, camera or tracking permission at any time in your device settings. The magnetic sensor features keep working.</li>
+    <li>Data Google collects through AdMob or ML Kit is held by Google; the developer cannot access or delete it. Contact Google under the policy in section 3.</li>
   </ul>
 
-  <h2>6. Children</h2>
-  <p>The app collects no personal data from anyone, including children.</p>
+  <h2>9. Children</h2>
+  <p>The app is not designed for children under 13. The developer collects no personal data from anyone, and ad content is limited to PG.</p>
 
-  <h2>7. If you contact the developer</h2>
+  <h2>10. If you contact the developer</h2>
   <p>If you send an email, the developer uses your address and message only to reply to you, never for marketing.</p>
 
-  <h2>8. Your rights</h2>
-  <p>Because the app collects no personal data, the developer holds no data about you to access, correct or delete. For questions under Thailand's Personal Data Protection Act (PDPA) or the GDPR, use the email above.</p>
+  <h2>11. Your rights</h2>
+  <p>The developer holds no personal data about you to access, correct or delete; ad and diagnostic data is held by Google. For questions under Thailand's Personal Data Protection Act (PDPA) or the GDPR, use the email above.</p>
 
-  <h2>9. Changes</h2>
-  <p>If the app changes how it uses data, the developer will update this page and its effective date before releasing that version.</p>
+  <h2>12. Changes</h2>
+  <p>If the app changes how it uses data, the developer will update this page before releasing that version.</p>
 
   <p class="note">Support: <a href="support.html">support.html</a></p>
   </div>
